@@ -1,0 +1,16 @@
+# Get  intensity (dB) for each file
+
+clearinfo
+n = numberOfSelected("Sound")
+for i to n 
+	sound[i] = selected("Sound", i)
+endfor
+for i to n
+	selectObject: sound[i]
+	name$ = selected$("Sound")
+	db = Get intensity (dB)
+	appendInfoLine: name$, tab$, db
+	
+endfor
+
+

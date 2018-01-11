@@ -1,0 +1,20 @@
+# you need to run this in textgrid silences files
+
+clearinfo
+n = numberOfSelected ("TextGrid")
+for i to n
+	textgrid[i] = selected ("TextGrid", i)
+endfor
+
+for i to n
+	selectObject: textgrid[i]
+	name$ = selected$ ("TextGrid")
+	last_lab = Get number of intervals: 1
+	start = Get start point: 1, 2
+	end = Get start point: 1, last_lab
+	total_duration = end - start
+	appendInfoLine: name$, tab$, total_duration
+endfor 
+
+
+

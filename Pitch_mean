@@ -1,0 +1,22 @@
+# Get the min and max pitch value for each file
+
+hy_min = 65
+hy_max = 400
+
+clearinfo
+n = numberOfSelected("Sound")
+for i to n 
+	sound[i] = selected("Sound", i)
+endfor
+for i to n
+	selectObject: sound[i]
+	name$ = selected$("Sound")
+	To Pitch: 0, hy_min, hy_max
+	mean = Get mean: 0, 0, "Hertz"
+	std = Get standard deviation: 0, 0, "Hertz"
+	Remove
+	appendInfoLine: name$, tab$, mean, tab$, std
+	
+endfor
+
+

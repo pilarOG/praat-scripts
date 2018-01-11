@@ -1,0 +1,16 @@
+# Save all wave files in directory "x$"
+
+x$ = "C:\Users\P_Oplustil\Desktop\"
+
+n = numberOfSelected("Sound")
+for i to n 
+	sound[i] = selected("Sound", i)
+endfor
+for i to n
+	selectObject: sound[i]
+	name$ = selected$("Sound")
+	Save as WAV file: x$+name$+".wav"
+endfor
+
+
+
